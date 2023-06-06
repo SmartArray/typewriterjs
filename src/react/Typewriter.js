@@ -37,13 +37,14 @@ class Typewriter extends Component {
   }
 
   render() {
-    const { component: Component } = this.props; 
+    const { component: Component, ...otherProps } = this.props; 
     
     return (
       <Component
         ref={(ref) => this.typewriter = ref}
         className='Typewriter'
         data-testid='typewriter-wrapper'
+        {...otherProps}
       />
     );
   }
